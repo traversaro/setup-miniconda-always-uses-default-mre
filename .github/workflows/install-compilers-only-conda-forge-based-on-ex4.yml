@@ -1,4 +1,4 @@
-name:  install-compilers-only-conda-forge-no-mamba.yml 
+name:  install-compilers-only-conda-forge-based-on-ex4
 
 on:
   push:
@@ -40,13 +40,12 @@ jobs:
           channel-priority: flexible
           show-channel-urls: true
           use-only-tar-bz2: true
-
-    - name: Dependencies
-      shell: bash -l {0}
-      run: |
-        conda info
-        conda list
-        conda config --show-sources
-        conda config --show
-        # Compilation related dependencies
-        conda install cmake compilers make ninja pkg-config
+      - name: Dependencies
+        shell: bash -l {0}
+        run: |
+          conda info
+          conda list
+          conda config --show-sources
+          conda config --show
+          # Compilation related dependencies
+          conda install cmake compilers make ninja pkg-config
