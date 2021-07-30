@@ -1,4 +1,4 @@
-name: C++ CI Workflow with conda dependencies
+name: install-compilers-only-conda-forge
 
 on:
   push:
